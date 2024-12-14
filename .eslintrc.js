@@ -3,8 +3,6 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  'no-console': 'off',
-
   extends: [
     'plugin:react/recommended',
     'airbnb',
@@ -20,6 +18,8 @@ module.exports = {
     'react',
   ],
   rules: {
+    'no-console': 'off', // Disable the no-console rule
+
     'jsx-a11y/label-has-associated-control': 0,
     'react/jsx-props-no-spreading': 0,
     'react/react-in-jsx-scope': 0,
@@ -30,7 +30,7 @@ module.exports = {
     'import/prefer-default-export': 0,
     'max-len': [
       'warn',
-      { "code": 300 }
+      { code: 300 },
     ],
     'no-multiple-empty-lines': [
       'error',
