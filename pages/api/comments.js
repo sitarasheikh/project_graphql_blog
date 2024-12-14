@@ -9,7 +9,7 @@ async function safeRequest(client, query, variables, retries = 3) {
     return await client.request(query, variables);
   } catch (error) {
     if (retries > 0 && error.response?.status === 429) {
-      // Using single quotes and removed console.log
+      // Replaced console.log with console.warn and used single quotes
       console.warn('Rate limit hit. Retrying...');
       await delay(1000); // Delay for 1 second
       return safeRequest(client, query, variables, retries - 1);
@@ -49,8 +49,8 @@ export default async function asynchandler(req, res) {
 
     return res.status(200).send(result);
   } catch (error) {
-    // Replacing console.log with console.error
+    // Replaced console.log with console.error and used single quotes
     console.error('Error creating comment:', error.message);
     return res.status(500).json({ error: 'Something went wrong. Please try again later.' });
   }
-};
+}
