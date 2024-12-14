@@ -53,5 +53,4 @@ export default async function asynchandler(req, res) {
     console.error('Error creating comment:', error.message);
     return res.status(500).json({ error: 'Something went wrong. Please try again later.' });
   }
-}
-np
+};
